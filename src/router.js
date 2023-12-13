@@ -5,8 +5,8 @@ import TestPage from './pages/TestPage.vue';
 
 const routes = [
   {
-    path: "/",
-    name: "placeholder",          //cercare nome best practice
+    path: "/mainpage",
+    name: "mainpage",
     component: MainPage,
   },
   {

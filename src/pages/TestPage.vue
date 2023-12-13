@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <router-link to="/">MainPage</router-link>
+
 </template>
 
 <style lang="scss" scoped>
