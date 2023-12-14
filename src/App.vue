@@ -26,7 +26,7 @@
   To do:
 
   Importante:
-  -rendere la "mainpage" la pagina principale "/". Accedere alla "testpage" tramite "mainpage" o altro componente?
+  -rendere "/mainpage" > "/". Accedere alla "testpage" tramite "/" o altro componente?
   
   Media importanza:
   -rendere leggibili i pulsanti <router-link>
