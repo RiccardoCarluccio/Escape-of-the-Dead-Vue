@@ -1,8 +1,50 @@
 @use "../../../scss/partials/mixins" as *;
 @use "../../../scss/partials/variables" as *;
 
-.split-test {
-  height: 100px;
+.dice-bar {
+  width: 320px;
+  height: 60px;
+  padding: 0 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+
+.dice-manipulator {
+  height: 50px;
   aspect-ratio: 1/1;
-  background-color: goldenrod;
+  position: relative;
+
+  .sign-div {
+    position: absolute;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+
+  .minus-div {
+    height: 8px;
+    width: 40px;
+  }
+
+  .plus-div {
+    height: 40px;
+    width: 8px;
+  }
+}
+
+.dice-subtractor {
+  background-color: $button-subtractor;
+}
+
+.dice-incrementer {
+  background-color: $button-incrementer;
+}
+
+.dice-zone {
+  flex-grow: 1;
+  height: 60px;
+  background-color: $background-empty;
 }
