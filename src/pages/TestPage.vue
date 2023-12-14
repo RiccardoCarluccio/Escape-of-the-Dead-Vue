@@ -1,17 +1,17 @@
 <script>
-  import ProgressBar from '../components/ProgressBar/ProgressBar.vue';
+  import DiceBar from '../components/DiceBar/DiceBar.vue';
   import TestComponent from '../components/TestComponent.vue';
 
   export default {
     components: {
-      ProgressBar,
+      DiceBar,
       TestComponent,
     }
   }
 </script>
 
 <template>
-  <ProgressBar></ProgressBar>
+  <DiceBar></DiceBar>
   <TestComponent></TestComponent>
 </template>
 
