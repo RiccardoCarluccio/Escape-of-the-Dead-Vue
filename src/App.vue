@@ -30,7 +30,6 @@
   
   Media importanza:
   -rendere leggibili i pulsanti <router-link>
-  -splittare js, html e css dei componenti .vue in più file
 
   Bassa importanza:
   -cercare un nome migliore per la route "mainpage". "escape-of-the-dead"? Cercare naming conventions
