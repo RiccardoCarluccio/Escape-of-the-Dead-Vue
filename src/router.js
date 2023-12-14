@@ -5,7 +5,7 @@ import TestPage from './pages/TestPage.vue';
 
 const routes = [
   {
-    path: "/mainpage",
+    path: "/escape-of-the-dead",
     name: "mainpage",
     component: MainPage,
   },
