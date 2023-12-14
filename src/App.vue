@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <router-link to="/mainpage">MainPage</router-link>
+  <router-link to="/escape-of-the-dead">MainPage</router-link>
   <router-link to="/testpage">TestPage</router-link>
 
   <router-view></router-view>
@@ -32,5 +32,4 @@
   -rendere leggibili i pulsanti <router-link>
 
   Bassa importanza:
-  -cercare un nome migliore per la route "mainpage". "escape-of-the-dead"? Cercare naming conventions
 -->
