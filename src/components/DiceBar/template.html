@@ -1,11 +1,16 @@
 <div class="dice-bar">
-  <div class="dice-manipulator dice-subtractor">
+  <div class="dice-manipulator dice-subtractor" @click="removeDice">
     <div class="sign-div minus-div"></div>
   </div>
 
-  <div class="dice-zone"></div>
+  <div class="dice-zone">
+    <div class="dice" v-show="visible"></div>
+    <div class="dice"></div>
+    <div class="dice"></div>
+    <div class="dice"></div>
+  </div>
 
-  <div class="dice-manipulator dice-incrementer">
+  <div class="dice-manipulator dice-incrementer" @click="addDice">
     <div class="sign-div minus-div"></div>
     <div class="sign-div plus-div"></div>
   </div>

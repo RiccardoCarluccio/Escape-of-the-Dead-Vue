@@ -3,4 +3,8 @@ import "../scss/style.scss"
 import { router } from "./router.js"
 import App from './App.vue'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+
+app.config.globalProperties.$diceCounter = 4;
+
+app.use(router).mount('#app');

@@ -48,4 +48,14 @@
   flex-grow: 1;
   height: 60px;
   background-color: $background-empty;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dice {
+  background-color: white;
+  width: calc((100% - 15px) / 4);
+  aspect-ratio: 1/1;
 }
