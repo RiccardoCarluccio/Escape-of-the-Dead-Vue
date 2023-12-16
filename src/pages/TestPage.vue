@@ -3,6 +3,11 @@
   import HealthBar from '../components/HealthBar/HealthBar.vue';
 
   export default {
+    data() {
+      return {
+        diceCounter: 0,
+      }
+    },
     components: {
       DiceBar,
       HealthBar
@@ -11,10 +16,10 @@
 </script>
 
 <template>
-  <DiceBar></DiceBar>
-  <DiceBar></DiceBar>
+  <DiceBar :dice-counter="diceCounter"></DiceBar>
+  <DiceBar :dice-counter="diceCounter"></DiceBar>
   <div>
-    Out of component $diceCounter: {{  $diceCounter }}
+    Out of component diceCounter: {{ diceCounter }}
   </div>
   <HealthBar :min-value=0 :max-value=10 :value=3 />
 </template>
