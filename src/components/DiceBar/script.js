@@ -14,14 +14,14 @@ export default {
   },
   methods: {
     addDice() {
-      if(this.diceCounter <= 3) {
+      if(this.diceCounter <= 3 && this.numberOfDice <= 3) {
         this.numberOfDice++;
         const el = 1;
         this.getEmit(el);
       }
     },
     removeDice() {
-      if(this.diceCounter >= 1) {
+      if(this.diceCounter >= 1 && this.numberOfDice >= 1) {
         this.numberOfDice--;
         const el = -1;
         this.getEmit(el);
