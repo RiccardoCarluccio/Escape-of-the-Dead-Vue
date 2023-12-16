@@ -12,18 +12,14 @@ export default {
       if(this.$diceCounter >= 1 && this.$diceCounter <= 4) {              //va in conflitto grave con addDice()
         this.$diceCounter--;
     
-        if(this.$diceCounter >= 1) {
-          this['visible' + this.$diceCounter] = false;
-        }
+        this['visible' + this.$diceCounter] = false;
       }
     },
     addDice() {
       if(this.$diceCounter >= 0 && this.$diceCounter <= 3) {
         this.$diceCounter++;
     
-        if(this.$diceCounter >= 1) {
-          this['visible' + this.$diceCounter] = true;
-        }
+        this['visible' + this.$diceCounter] = true;
       }
     },
   },
