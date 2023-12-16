@@ -4,10 +4,10 @@
   </div>
 
   <div class="dice-zone">
-    <div class="dice" v-show="visible1">1</div>
-    <div class="dice" v-show="visible2">2</div>
-    <div class="dice" v-show="visible3">3</div>
-    <div class="dice" v-show="visible4">4</div>
+    <div class="dice" v-show="numberOfDice >= 1">1</div>
+    <div class="dice" v-show="numberOfDice >= 2">2</div>
+    <div class="dice" v-show="numberOfDice >= 3">3</div>
+    <div class="dice" v-show="numberOfDice >= 4">4</div>
   </div>
 
   <div class="dice-manipulator dice-incrementer" @click="addDice">
@@ -18,7 +18,6 @@
 </div>
 
 <div>
-  <div>global diceCounter: {{ diceCounter }}</div>
-  <div>localDiceCounter: {{ localDiceCounter }}
-  </div>
+  <div>Global Dice Counter: {{ diceCounter }}</div>
+  <div>Number of Dice: {{ numberOfDice }}</div>
 </div>

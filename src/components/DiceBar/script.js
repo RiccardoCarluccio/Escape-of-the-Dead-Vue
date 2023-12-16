@@ -9,74 +9,26 @@ export default {
   ],
   data() {
     return {
-      visible1: false,
-      visible2: false,
-      visible3: false,
-      visible4: false,
-      localDiceCounter: this.diceCounter,
+      numberOfDice: 0,
     };
   },
   methods: {
-    removeDice() {
-      if(this.diceCounter >= 1) {
-        this.localDiceCounter = this.diceCounter;
-        this['visible' + this.localDiceCounter] = false;
-        this.localDiceCounter--;
-        this.getEmit();
-      }
-    },
     addDice() {
       if(this.diceCounter <= 3) {
-        this.localDiceCounter = this.diceCounter;
-        this.localDiceCounter++;
-        this['visible' + this.localDiceCounter] = true;
-        this.getEmit();
+        this.numberOfDice++;
+        const el = 1;
+        this.getEmit(el);
       }
     },
-    getEmit() {
-      this.$emit(GET_COUNTER_EVENT, this.localDiceCounter);
+    removeDice() {
+      if(this.diceCounter >= 1) {
+        this.numberOfDice--;
+        const el = -1;
+        this.getEmit(el);
+      }
+    },
+    getEmit(el) {
+      this.$emit(GET_COUNTER_EVENT, el);
     }
   },
 }
-
-/*
-  addDice() {
-    if(this.diceCounter <= 3) {
-      this.zombieDiceBar++;
-      for(let i = 0; i <= this.zombieDiceBar; i++) {
-        this['visible' + i] = true;
-      }
-    }
-  }
-*/
-
-//
-/*
-removeDice() {
-    if(this.diceCounter === this.localDiceCounter) {
-      if(this.diceCounter >= 1) {
-        this.localDiceCounter = this.diceCounter;
-        this['visible' + this.localDiceCounter] = false;
-        this.localDiceCounter--;
-        this.getEmit();
-      }
-    } else {
-      if(Math.min(this.diceCounter, this.localDiceCounter) >= 1) {
-        this['visible' + Math.min(this.diceCounter, this.localDiceCounter)] = false;
-        this.localDiceCounter--;
-        this.getEmit();
-      }
-    }
-  },
-*/
-
-/*
-for (let i = 1; i <= 4; i++) {
-    this['visible' + i] = i <= this.diceCounter;
-  }
-
-this['visible1'] = 1 <= 3; (true)
-this['visible2'] = 2 <= 3; (true)
-this['visible3'] = 3 <= 3; (true)
-this['visible4'] = 4 <= 3; (false)
-*/

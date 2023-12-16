@@ -6,9 +6,6 @@
     data() {
       return {
         diceCounter: 0,
-        zombieDiceBar: 0,
-        wallDiceBar: 0,
-        carDiceBar: 0,
       }
     },
     components: {
@@ -17,7 +14,7 @@
     },
     methods: {
       updateCounter(n) {
-        this.diceCounter = n;
+        this.diceCounter += n;
       }
     }
   }
