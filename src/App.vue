@@ -1,12 +1,6 @@
 <script>
-  import MainPage from './pages/MainPage.vue';
-  import TestPage from './pages/TestPage.vue';
-
   export default {
-    components: {
-      MainPage,
-      TestPage,
-    },
+    
   };
 </script>
 
