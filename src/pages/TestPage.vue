@@ -10,6 +10,11 @@
 
 <template>
   <DiceBar></DiceBar>
+  <DiceBar></DiceBar>
+
+  <div>
+    Out of component $diceCounter: {{  $diceCounter }}
+  </div>
 </template>
 
 <style lang="scss" scoped>
