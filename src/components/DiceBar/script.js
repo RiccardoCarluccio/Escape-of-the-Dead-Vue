@@ -9,7 +9,7 @@ export default {
   },
   methods: {
     removeDice() {                                                        //removeDice() deve poter portare i dadi visibili a 0. Ad ora non lo fa sotto l'1
-      if(this.$diceCounter >= 1 && this.$diceCounter <= 4) {              //va in conflitto con addDice(). Sicuro problemi matematici semplici dietro
+      if(this.$diceCounter >= 1 && this.$diceCounter <= 4) {              //va in conflitto grave con addDice()
         this.$diceCounter--;
     
         if(this.$diceCounter >= 1) {
