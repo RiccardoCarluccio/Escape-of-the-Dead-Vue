@@ -1,25 +1,27 @@
 export default {
+  props: {
+    diceCounter: Number,
+  },
   data() {
     return {
       visible1: false,
       visible2: false,
       visible3: false,
       visible4: false,
+      localDiceCounter: this.diceCounter,
     };
   },
   methods: {
-    removeDice() {                                                        //removeDice() deve poter portare i dadi visibili a 0. Ad ora non lo fa sotto l'1
-      if(this.$diceCounter >= 1 && this.$diceCounter <= 4) {              //va in conflitto grave con addDice()
-        this.$diceCounter--;
-    
-        this['visible' + this.$diceCounter] = false;
+    removeDice() {
+      if(this.localDiceCounter >= 1) {
+        this['visible' + this.localDiceCounter] = false;
+        this.localDiceCounter--;
       }
     },
     addDice() {
-      if(this.$diceCounter >= 0 && this.$diceCounter <= 3) {
-        this.$diceCounter++;
-    
-        this['visible' + this.$diceCounter] = true;
+      if(this.localDiceCounter <= 3) {
+        this.localDiceCounter++;
+        this['visible' + this.localDiceCounter] = true;
       }
     },
   },
@@ -27,7 +29,7 @@ export default {
 
 /*
 for (let i = 1; i <= 4; i++) {
-    this['visible' + i] = i <= this.$diceCounter;
+    this['visible' + i] = i <= this.diceCounter;
   }
 
 this['visible1'] = 1 <= 3; (true)
