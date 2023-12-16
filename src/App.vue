@@ -13,6 +13,7 @@
 <template>
   <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
   <router-link to="/testpage" class="restyled-router-link">TestPage</router-link>
+  <div class="restyled-router-link">questi due pulsanti li tolgo da quì tranquillo france. non ci saranno problemi di viewport</div>
 
   <router-view></router-view>
 </template>
@@ -22,6 +23,7 @@
   @use "../scss/partials/variables" as *;
 
   .restyled-router-link {
+    display: inline-block;
     text-decoration: none;
     color: white;
   }
