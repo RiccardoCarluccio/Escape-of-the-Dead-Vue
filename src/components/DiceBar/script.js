@@ -8,30 +8,28 @@ export default {
     };
   },
   methods: {
-    removeDice() {
-      this.visible = false;
+    removeDice() {                                                        //removeDice() deve poter portare i dadi visibili a 0. Ad ora non lo fa sotto l'1
+      if(this.$diceCounter >= 1 && this.$diceCounter <= 4) {              //va in conflitto con addDice(). Sicuro problemi matematici semplici dietro
+        this.$diceCounter--;
+    
+        if(this.$diceCounter >= 1) {
+          this['visible' + this.$diceCounter] = false;
+        }
+      }
     },
     addDice() {
-      this.visible = true;
+      if(this.$diceCounter >= 0 && this.$diceCounter <= 3) {
+        this.$diceCounter++;
+    
+        if(this.$diceCounter >= 1) {
+          this['visible' + this.$diceCounter] = true;
+        }
+      }
     },
   },
 }
 
 /*
-V-IF
-$ parte da 0 e non 4
-addDice() {
-  if(this.$diceCounter === 0 || this.$diceCounter <== 4) {
-    $diceCounter++;
-
-    if($>0) {
-      visible$diceCounter = true;
-    }
-  }
-}
-
-this['visible' + $diceCounter] = true;
------------------
 for (let i = 1; i <= 4; i++) {
     this['visible' + i] = i <= this.$diceCounter;
   }
@@ -40,3 +38,4 @@ this['visible1'] = 1 <= 3; (true)
 this['visible2'] = 2 <= 3; (true)
 this['visible3'] = 3 <= 3; (true)
 this['visible4'] = 4 <= 3; (false)
+*/
