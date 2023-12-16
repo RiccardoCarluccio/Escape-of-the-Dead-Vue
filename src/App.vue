@@ -31,8 +31,9 @@
   To do:
 
   Importante:
+  -$diceCounter deve essere la stessa per tutti i componenti. Al momento ogni componente ha la sua $diceCounter 
   -rendere "/escape-of-the-dead" la main page. Accedere alla "testpage" tramite "/escape-of-the-dead" o altro componente
-  
+
   Media importanza:
 
   Bassa importanza:

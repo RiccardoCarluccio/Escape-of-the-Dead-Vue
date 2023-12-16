@@ -1,18 +1,20 @@
 <script>
-  import ProgressBar from '../components/ProgressBar/ProgressBar.vue';
-  import TestComponent from '../components/TestComponent.vue';
+  import DiceBar from '../components/DiceBar/DiceBar.vue';
 
   export default {
     components: {
-      ProgressBar,
-      TestComponent,
+      DiceBar,
     }
   }
 </script>
 
 <template>
-  <ProgressBar></ProgressBar>
-  <TestComponent></TestComponent>
+  <DiceBar></DiceBar>
+  <DiceBar></DiceBar>
+
+  <div>
+    Out of component $diceCounter: {{  $diceCounter }}
+  </div>
 </template>
 
 <style lang="scss" scoped>
