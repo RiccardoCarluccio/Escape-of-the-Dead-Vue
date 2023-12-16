@@ -5,6 +5,6 @@ import App from './App.vue'
 
 const app = createApp(App);
 
-app.config.globalProperties.$diceCounter = 4;
+app.config.globalProperties.$diceCounter = 0;
 
 app.use(router).mount('#app');
