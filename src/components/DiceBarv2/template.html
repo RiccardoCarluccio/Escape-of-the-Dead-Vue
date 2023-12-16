@@ -1,0 +1,7 @@
+<div class="dice-bar-v2">
+  <div class="dice-cta remove-dice" @click="onDiceRemove"></div>
+  <div class="dices">
+    <div class="dice" v-for="index in dicesCount" :key="index"></div>
+  </div>
+  <div class="dice-cta add-dice" @click="onDiceAdd"></div>
+</div>
