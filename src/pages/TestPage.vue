@@ -6,6 +6,9 @@
     data() {
       return {
         diceCounter: 0,
+        zombieDiceBar: 0,
+        wallDiceBar: 0,
+        carDiceBar: 0,
       }
     },
     components: {
@@ -24,7 +27,7 @@
   <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
   <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
   <div>
-    Out of component diceCounter: {{ diceCounter }}
+    TestPage diceCounter: {{ diceCounter }}
   </div>
   <HealthBar :min-value=0 :max-value=10 :value=3 />
 </template>

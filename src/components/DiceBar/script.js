@@ -18,14 +18,16 @@ export default {
   },
   methods: {
     removeDice() {
-      if(this.localDiceCounter >= 1) {
+      if(this.diceCounter >= 1) {
+        this.localDiceCounter = this.diceCounter;
         this['visible' + this.localDiceCounter] = false;
         this.localDiceCounter--;
         this.getEmit();
       }
     },
     addDice() {
-      if(this.localDiceCounter <= 3) {
+      if(this.diceCounter <= 3) {
+        this.localDiceCounter = this.diceCounter;
         this.localDiceCounter++;
         this['visible' + this.localDiceCounter] = true;
         this.getEmit();
@@ -36,6 +38,37 @@ export default {
     }
   },
 }
+
+/*
+  addDice() {
+    if(this.diceCounter <= 3) {
+      this.zombieDiceBar++;
+      for(let i = 0; i <= this.zombieDiceBar; i++) {
+        this['visible' + i] = true;
+      }
+    }
+  }
+*/
+
+//
+/*
+removeDice() {
+    if(this.diceCounter === this.localDiceCounter) {
+      if(this.diceCounter >= 1) {
+        this.localDiceCounter = this.diceCounter;
+        this['visible' + this.localDiceCounter] = false;
+        this.localDiceCounter--;
+        this.getEmit();
+      }
+    } else {
+      if(Math.min(this.diceCounter, this.localDiceCounter) >= 1) {
+        this['visible' + Math.min(this.diceCounter, this.localDiceCounter)] = false;
+        this.localDiceCounter--;
+        this.getEmit();
+      }
+    }
+  },
+*/
 
 /*
 for (let i = 1; i <= 4; i++) {
