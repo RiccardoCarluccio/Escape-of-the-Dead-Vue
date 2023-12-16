@@ -11,13 +11,18 @@
     components: {
       DiceBar,
       HealthBar
+    },
+    methods: {
+      updateCounter(n) {
+        this.diceCounter = n;
+      }
     }
   }
 </script>
 
 <template>
-  <DiceBar :dice-counter="diceCounter"></DiceBar>
-  <DiceBar :dice-counter="diceCounter"></DiceBar>
+  <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
+  <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
   <div>
     Out of component diceCounter: {{ diceCounter }}
   </div>
