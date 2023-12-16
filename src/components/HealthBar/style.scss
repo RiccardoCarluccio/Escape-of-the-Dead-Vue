@@ -1,0 +1,15 @@
+@use "../../../scss/partials/mixins" as *;
+@use "../../../scss/partials/variables" as *;
+
+.health-bar {
+  height: 25px;
+  width: 200px;
+  background-color: gray;
+  padding: 3px;
+}
+
+.health-bar-fill {
+  background-color: red;
+  height: 100%;
+  width: var(--healthBarFillPerc)
+}
