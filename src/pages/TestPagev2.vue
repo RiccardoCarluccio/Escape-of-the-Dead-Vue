@@ -1,12 +1,10 @@
 <script>
-import DiceBar from "../components/DiceBar/DiceBar.vue";
 import DiceBarv2 from "../components/DiceBarv2/DiceBarv2.vue";
 import HealthBar from "../components/HealthBar/HealthBar.vue";
 import SETTINGS from "../settings";
 
 export default {
   components: {
-    DiceBar,
     HealthBar,
     DiceBarv2,
   },
@@ -41,9 +39,6 @@ export default {
 </script>
 
 <template>
-  <DiceBar></DiceBar>
-  <DiceBar></DiceBar>
-  <div>Out of component $diceCounter: {{ $diceCounter }}</div>
   <HealthBar :min-value="0" :max-value="10" :value="3" />
   <DiceBarv2
     bar-name="zombies"
