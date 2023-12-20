@@ -1,6 +1,6 @@
 <script>
   import DiceBar from '../components/DiceBar/DiceBar.vue';
-  import HealthBar from '../components/HealthBar/HealthBar.vue';
+  import ProgressBar from '../components/ProgressBar/ProgressBar.vue';
 
   export default {
     data() {
@@ -10,7 +10,7 @@
     },
     components: {
       DiceBar,
-      HealthBar
+      ProgressBar
     },
     methods: {
       updateCounter(n) {
@@ -26,7 +26,7 @@
   <div>
     TestPage diceCounter: {{ diceCounter }}
   </div>
-  <HealthBar :min-value=0 :max-value=10 :value=3 />
+  <ProgressBar></ProgressBar>
 </template>
 
 <style lang="scss" scoped>
