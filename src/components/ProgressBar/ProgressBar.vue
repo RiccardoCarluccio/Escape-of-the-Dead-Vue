@@ -1,11 +1,7 @@
 <script>
   export default {
     props: {
-      ProgressName: String,
-      increasing: Boolean,
-      minValue: Number,
-      maxValue: Number,
-      currentValue: Number,
+      progressValue: Number,
     }
   }
 </script>
