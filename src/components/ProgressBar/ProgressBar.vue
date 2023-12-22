@@ -1,6 +1,7 @@
 <script>
   export default {
     props: {
+      progressClass: String,
       progressValue: Number,
       maxValue: Number,
     }
@@ -10,8 +11,12 @@
 <template>
   <div class="progress-bar">
     <div class="progress-segment"
-    :style="{width:`calc(100% / ${maxValue})`}"
-    v-for="n in progressValue">
+    :class="`${progressClass}`"
+    v-for="n in progressValue"
+    :key="n"
+    :style="{
+      width: `calc(100% / ${maxValue})`
+    }">
     </div>
   </div>
 </template>
@@ -30,7 +35,18 @@
   }
 
   .progress-segment {
-    background-color: black;
     height: 100%;
+  }
+
+  .segment-zombie {
+    background-color: $segment-zombie;
+  }
+
+  .segment-wall {
+    background-color: $segment-wall;
+  }
+
+  .segment-car {
+    background-color: $segment-car;
   }
 </style>
