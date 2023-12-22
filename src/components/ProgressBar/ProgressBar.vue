@@ -2,13 +2,17 @@
   export default {
     props: {
       progressValue: Number,
+      maxValue: Number,
     }
   }
 </script>
 
 <template>
   <div class="progress-bar">
-    <div class="progress-segment" v-for="a in b"></div>
+    <div class="progress-segment"
+    :style="{width:`calc(100% / ${maxValue})`}"
+    v-for="n in progressValue">
+    </div>
   </div>
 </template>
 
@@ -25,12 +29,8 @@
     align-items: center;
   }
 
-  .progress-container {
-    width: 100%;
-    height: 100%;
-  }
-
   .progress-segment {
     background-color: black;
+    height: 100%;
   }
 </style>

@@ -9,18 +9,15 @@
         progress: {
           zombies: {
             increasing: true,
-            value: 0,
-            dice: 0,
+            value: 3,
           },
           wall: {
             increasing: false,
-            value: 10,
-            dice: 0,
+            value: 5,
           },
           car: {
             increasing: true,
-            value: 0,
-            dice: 0,
+            value: 2,
           },
         }
       }
@@ -33,7 +30,7 @@
       updateCounter(n) {
         this.diceCounter += n;
       },
-      addProgress(e) {
+      updateProgress(e) {
 
       }
     }
@@ -47,7 +44,9 @@
     TestPage diceCounter: {{ diceCounter }}
   </div>
   
-  <ProgressBar :progress-value="progress.zombies.value"></ProgressBar>
+  <ProgressBar :progress-value="progress.zombies.value" :max-value="10"></ProgressBar>
+  <ProgressBar :progress-value="progress.wall.value" :max-value="10"></ProgressBar>
+  <ProgressBar :progress-value="progress.car.value" :max-value="10"></ProgressBar>
 </template>
 
 <style lang="scss" scoped>
