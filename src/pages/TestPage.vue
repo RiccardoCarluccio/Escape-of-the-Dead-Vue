@@ -7,9 +7,18 @@
       return {
         diceCounter: 0,
         progress: {
-          zombie: 0,
-          wall: 0,
-          car: 0,
+          zombie: {
+            increasing: true,
+            value: 3,
+          },
+          wall: {
+            increasing: false,
+            value: 5,
+          },
+          car: {
+            increasing: true,
+            value: 2,
+          },
         }
       }
     },
@@ -20,6 +29,9 @@
     methods: {
       updateCounter(n) {
         this.diceCounter += n;
+      },
+      updateProgress(e) {
+
       }
     }
   }
@@ -32,7 +44,9 @@
     TestPage diceCounter: {{ diceCounter }}
   </div>
   
-  <ProgressBar :progress-name="zombie" :increasing="true"></ProgressBar>
+  <ProgressBar progress-class="segment-zombie" :progress-value="progress.zombie.value" :max-value="10"></ProgressBar>
+  <ProgressBar progress-class="segment-wall" :progress-value="progress.wall.value" :max-value="10"></ProgressBar>
+  <ProgressBar progress-class="segment-car" :progress-value="progress.car.value" :max-value="10"></ProgressBar>
 </template>
 
 <style lang="scss" scoped>
