@@ -11,7 +11,7 @@
 <template>
   <div class="progress-bar">
     <div class="progress-segment"
-    :class="`${progressClass}`"
+    :class="progressClass"
     v-for="n in progressValue"
     :key="n"
     :style="{

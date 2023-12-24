@@ -32,4 +32,5 @@
   Media importanza:
 
   Bassa importanza:
+  -informarsi su :key
 -->
