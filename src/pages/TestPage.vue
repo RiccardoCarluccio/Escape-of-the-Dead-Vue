@@ -6,6 +6,11 @@
     data() {
       return {
         diceCounter: 0,
+        dice: {
+          zombie: 0,
+          wall: 0,
+          car: 0,
+        },
         progress: {
           zombie: {
             increasing: true,
