@@ -1,6 +1,7 @@
 <script>
   import DiceBar from '../components/DiceBar/DiceBar.vue';
   import ProgressBar from '../components/ProgressBar/ProgressBar.vue';
+  import DumbDiceBar from '../components/DumbDiceBar/DumbDiceBar.vue';
 
   export default {
     data() {
@@ -29,7 +30,8 @@
     },
     components: {
       DiceBar,
-      ProgressBar
+      ProgressBar,
+      DumbDiceBar,
     },
     methods: {
       updateCounter(n) {
@@ -56,6 +58,12 @@
   <ProgressBar progress-class="segment-zombie" :progress-value="progress.zombie.value" :max-value="10"></ProgressBar>
   <ProgressBar progress-class="segment-wall" :progress-value="progress.wall.value" :max-value="10"></ProgressBar>
   <ProgressBar progress-class="segment-car" :progress-value="progress.car.value" :max-value="10"></ProgressBar>
+
+  <div class="dumb-dice-bar-container">
+    <DumbDiceBar :dice-number="dice.zombie"></DumbDiceBar>
+    <DumbDiceBar :dice-number="dice.wall"></DumbDiceBar>
+    <DumbDiceBar :dice-number="dice.car"></DumbDiceBar>
+  </div>
 
   <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
 </template>
