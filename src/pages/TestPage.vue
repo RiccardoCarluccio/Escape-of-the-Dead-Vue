@@ -34,8 +34,14 @@
       DumbDiceBar,
     },
     methods: {
-      updateCounter(n) {
+      updateCounter(n) {            //per la smart DiceBar
         this.diceCounter += n;
+      },
+      addDice () {
+
+      },
+      removeDice() {
+
       },
       endTurn() {
 
@@ -68,9 +74,9 @@
     <div class="dumb-dice-bar-component-container">
       <div class="dumb-dice-bar-container">
         dumb
-        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.zombie"></DumbDiceBar>
-        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.wall"></DumbDiceBar>
-        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.car"></DumbDiceBar>
+        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.zombie" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
+        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.wall" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
+        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.car" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
       </div>
     </div>
 
