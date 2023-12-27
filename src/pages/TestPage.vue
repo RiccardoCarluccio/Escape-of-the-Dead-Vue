@@ -38,7 +38,8 @@
         this.diceCounter += n;
       },
       addDice () {
-
+        if(this.diceCounter >= 4) return;
+        
       },
       removeDice() {
 
@@ -74,9 +75,9 @@
     <div class="dumb-dice-bar-component-container">
       <div class="dumb-dice-bar-container">
         dumb
-        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.zombie" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
-        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.wall" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
-        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.car" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
+        <DumbDiceBar counter-name="zombie" :dice-counter="diceCounter" :dice-number="dice.zombie" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
+        <DumbDiceBar counter-name="wall" :dice-counter="diceCounter" :dice-number="dice.wall" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
+        <DumbDiceBar counter-name="car" :dice-counter="diceCounter" :dice-number="dice.car" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
       </div>
     </div>
 

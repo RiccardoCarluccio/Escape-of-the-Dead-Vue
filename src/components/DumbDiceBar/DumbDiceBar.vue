@@ -1,6 +1,7 @@
 <script>
   export default {
     props: {
+      counterName: String,
       diceCounter: Number,
       diceNumber: Number,
     }
