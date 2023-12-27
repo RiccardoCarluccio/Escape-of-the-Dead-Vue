@@ -48,24 +48,34 @@
 </script>
 
 <template>
-  <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
-  <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
-  <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
-  <div>
-    TestPage diceCounter: {{ diceCounter }}
-  </div>
-  
-  <ProgressBar progress-class="segment-zombie" :progress-value="progress.zombie.value" :max-value="10"></ProgressBar>
-  <ProgressBar progress-class="segment-wall" :progress-value="progress.wall.value" :max-value="10"></ProgressBar>
-  <ProgressBar progress-class="segment-car" :progress-value="progress.car.value" :max-value="10"></ProgressBar>
+  <div class="main-test-page-container">
+    <div class="dice-bar-component-container">
+      smart
+      <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
+      <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
+      <DiceBar :dice-counter="diceCounter" @get-counter-event="updateCounter"></DiceBar>
+      <div>
+        TestPage diceCounter: {{ diceCounter }}
+      </div>
+    </div>
 
-  <div class="dumb-dice-bar-container">
-    <DumbDiceBar :dice-number="dice.zombie"></DumbDiceBar>
-    <DumbDiceBar :dice-number="dice.wall"></DumbDiceBar>
-    <DumbDiceBar :dice-number="dice.car"></DumbDiceBar>
-  </div>
+    <div class="progress-bar-component-container">
+      <ProgressBar progress-class="segment-zombie" :progress-value="progress.zombie.value" :max-value="10"></ProgressBar>
+      <ProgressBar progress-class="segment-wall" :progress-value="progress.wall.value" :max-value="10"></ProgressBar>
+      <ProgressBar progress-class="segment-car" :progress-value="progress.car.value" :max-value="10"></ProgressBar>
+    </div>
 
-  <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
+    <div class="dumb-dice-bar-component-container">
+      <div class="dumb-dice-bar-container">
+        dumb
+        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.zombie"></DumbDiceBar>
+        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.wall"></DumbDiceBar>
+        <DumbDiceBar :dice-counter="diceCounter" :dice-number="dice.car"></DumbDiceBar>
+      </div>
+    </div>
+
+    <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -74,8 +84,15 @@
 
   .end-turn-button {
     background-color: $button-next-phase;
-    width: 80px;
-    height: 30px;
+    width: 160px;
+    height: 60px;
     @include flex-center-center;
+    font-size: 1.5rem;
+  }
+
+  .main-test-page-container {
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
   }
 </style>
