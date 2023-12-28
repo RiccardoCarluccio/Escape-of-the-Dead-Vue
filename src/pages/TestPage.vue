@@ -14,17 +14,17 @@
         },
         progress: {
           zombie: {
-            value: 3,
-            increment: 1,
-            threshold: 3,
-          },
-          wall: {
-            value: 5,
+            value: 0,
             increment: -1,
             threshold: 3,
           },
+          wall: {
+            value: 0,
+            increment: 1,
+            threshold: 3,
+          },
           car: {
-            value: 2,
+            value: 0,
             increment: 1,
             threshold: 5,
           },
@@ -52,23 +52,28 @@
       },
       endTurn() {
         this.diceRoll();
-        this.updateProgress();
+        //this.updateProgress();
         this.resetInput();
-        this.checkProgress();
-        this.spawnZombie();
+        //this.checkProgress();
+        //this.spawnZombie();
       },
       diceRoll() {
-        this.dice.forEach((el) => {
+        for(const el in this.dice) {
           if(this.dice[el]) {
-            const result = Math.floor(Math.random() * 6 + 1);
-            if(result >= this.progress[el].threshold) {
-              this.progress[el] += this.progress[el].increment;
+            for(let i = this.dice[el]; i >= 1; i--) {
+              const result = Math.floor(Math.random() * 6 + 1);
+              console.log(el, result);
+              if(result >= this.progress[el].threshold) {
+                this.progress[el].value += this.progress[el].increment;
+              }
             }
           }
-        });
+        }
       },
-      updateProgress() {
-
+      updateProgress(n) {
+        if(n >= this.progress[el].threshold) {
+          this.progress[el].value += this.progress[el].increment;
+        }
       },
       resetInput() {
         this.dice = {zombie: 0, wall: 0, car: 0};
