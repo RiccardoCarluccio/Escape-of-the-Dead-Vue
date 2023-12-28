@@ -37,12 +37,15 @@
       updateCounter(n) {            //per la smart DiceBar
         this.diceCounter += n;
       },
-      addDice () {
+      addDice(el) {
         if(this.diceCounter >= 4) return;
-        
+        this.dice[el]++;
+        this.diceCounter++;
       },
-      removeDice() {
-
+      removeDice(el) {
+        if(this.diceCounter === 0) return;
+        this.dice[el]--;
+        this.diceCounter--;
       },
       endTurn() {
 

@@ -4,7 +4,19 @@
       counterName: String,
       diceCounter: Number,
       diceNumber: Number,
-    }
+    },
+    emits: [
+      "addDiceEvent",
+      "removeDiceEvent",
+    ],
+    methods: {
+      addDice() {
+        this.$emit("addDiceEvent", this.counterName)
+      },
+      removeDice() {
+        this.$emit("removeDiceEvent", this.counterName)
+      },
+    },
   }
 </script>
 
@@ -15,22 +27,18 @@
     </div>
 
     <div class="dice-zone">
-      <div class="dice" v-show="numberOfDice >= 1">1</div>
-      <div class="dice" v-show="numberOfDice >= 2">2</div>
-      <div class="dice" v-show="numberOfDice >= 3">3</div>
-      <div class="dice" v-show="numberOfDice >= 4">4</div>
+      <div class="dice" v-for="die in diceNumber" :key="die">{{ die }}</div>
     </div>
 
     <div class="dice-manipulator dice-incrementer" @click="addDice">
       <div class="sign-div minus-div"></div>
       <div class="sign-div plus-div"></div>
     </div>
-
   </div>
 
   <div>
     <div>Global Dice Counter: {{ diceCounter }}</div>
-    <div>Number of Dice: {{ numberOfDice }}</div>
+    <div>Number of Dice: {{ diceNumber }}</div>
   </div>
 </template>
 
