@@ -65,6 +65,9 @@
             if(result >= this.progress[el].threshold) {
               if((this.progress[el].value + this.progress[el].increment <= 10) && (this.progress[el].value + this.progress[el].increment >= 0)) {
                 this.progress[el].value += this.progress[el].increment;
+                if(this.progress[el].increment === -1) {
+                  this.numberOfZombies--;
+                }
               }
             }
           }

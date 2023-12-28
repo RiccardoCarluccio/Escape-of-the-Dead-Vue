@@ -27,7 +27,7 @@
   To do:
 
   Importante:
-  -come elimino gli zombie dopo aver rollato se non con un if della madonna?
+  -
 
   Media importanza:
   -sistemare le router-view
