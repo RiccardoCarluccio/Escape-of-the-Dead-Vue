@@ -7,7 +7,6 @@
     data() {
       return {
         diceCounter: 0,
-        numberOfZombies: 0,
         dice: {
           zombie: 0,
           wall: 0,
@@ -55,7 +54,9 @@
         this.diceRoll();
         this.resetInput();
         //this.checkProgress();
+        this.zombieAttack();
         this.spawnZombie();
+        console.log(this.progress.zombie.value, this.progress.wall.value, this.progress.car.value);
       },
       diceRoll() {
         for(const el in this.dice) {
@@ -71,7 +72,6 @@
               }
             }
           }
-          console.log(this.progress.zombie.value, this.progress.wall.value, this.progress.car.value);
         }
       },
       // updateProgress(n) {
@@ -89,15 +89,35 @@
 
       },
       spawnZombie() {
-        if((this.progress.car.value >= 0) && (this.progress.car.value <= 3)) { this.numberOfZombies += 1 }
-        else if((this.progress.car.value >= 4) && (this.progress.car.value <= 6)) { this.numberOfZombies += 2 }
-        else if((this.progress.car.value >= 7) && (this.progress.car.value <= 8)) { this.numberOfZombies += 3 }
-        else { this.numberOfZombies += 4 };
-        this.progress.zombie.value += this.numberOfZombies;
-        console.log(this.numberOfZombies);
+        if((this.progress.car.value >= 0) && (this.progress.car.value <= 3)) { 
+          if(this.progress.zombie.value + 1 <= 10) {
+            this.progress.zombie.value++;
+          }
+        }
+        else if((this.progress.car.value >= 4) && (this.progress.car.value <= 6)) {
+          if(this.progress.zombie.value + 2 <= 10) {
+            this.progress.zombie.value += 2;
+          } else {
+            this.progress.zombie.value = 10;
+          }
+        }
+        else if((this.progress.car.value >= 7) && (this.progress.car.value <= 8)) {
+          if(this.progress.zombie.value + 3 <= 10) {
+            this.progress.zombie.value += 3;
+          } else {
+            this.progress.zombie.value = 10;
+          }
+        }
+        else {
+          if(this.progress.zombie.value + 4 <= 10) {
+            this.progress.zombie.value += 4;
+          } else {
+            this.progress.zombie.value = 10;
+          }
+        }
       },
       zombieAttack() {
-
+        this.progress.wall.value -= this.progress.zombie.value;
       },
     },
   }
