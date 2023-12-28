@@ -58,7 +58,7 @@
         this.spawnZombie();
       },
       diceRoll() {
-        this.dice.foreach((el) => {
+        this.dice.forEach((el) => {
           if(this.dice[el]) {
             const result = Math.floor(Math.random() * 6 + 1);
             if(result >= this.progress[el].threshold) {
