@@ -27,7 +27,7 @@
   To do:
 
   Importante:
-  -la ProgressBar Zombie non rispetta l'incremento negativo se il valore iniziale è 0
+  -come elimino gli zombie dopo aver rollato se non con un if della madonna?
 
   Media importanza:
   -sistemare le router-view

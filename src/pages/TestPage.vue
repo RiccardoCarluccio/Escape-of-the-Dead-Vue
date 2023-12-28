@@ -7,6 +7,7 @@
     data() {
       return {
         diceCounter: 0,
+        numberOfZombies: 0,
         dice: {
           zombie: 0,
           wall: 0,
@@ -54,29 +55,29 @@
         this.diceRoll();
         this.resetInput();
         //this.checkProgress();
-        //this.spawnZombie();
+        this.spawnZombie();
       },
       diceRoll() {
         for(const el in this.dice) {
-          if(this.dice[el]) {
-            for(let i = this.dice[el]; i >= 1; i--) {
-              const result = Math.floor(Math.random() * 6 + 1);
-              console.log(el, result);
-              if(result >= this.progress[el].threshold) {
-                if((this.progress[el].value + this.progress[el].increment <= 10) && (this.progress[el].value + this.progress[el].increment >= 0)) {
-                  this.progress[el].value += this.progress[el].increment;
-                }
+          for(let i = this.dice[el]; i >= 1; i--) {
+            const result = Math.floor(Math.random() * 6 + 1);
+            console.log(el, result);
+            if(result >= this.progress[el].threshold) {
+              if((this.progress[el].value + this.progress[el].increment <= 10) && (this.progress[el].value + this.progress[el].increment >= 0)) {
+                this.progress[el].value += this.progress[el].increment;
               }
             }
           }
           console.log(this.progress.zombie.value, this.progress.wall.value, this.progress.car.value);
         }
       },
-      updateProgress(n) {
-        if(n >= this.progress[el].threshold) {
-          this.progress[el].value += this.progress[el].increment;
-        }
-      },
+      // updateProgress(n) {
+      //   if(n >= this.progress[el].threshold) {
+      //     if((this.progress[el].value + this.progress[el].increment <= 10) && (this.progress[el].value + this.progress[el].increment >= 0)) {
+      //       this.progress[el].value += this.progress[el].increment;
+      //     }
+      //   }
+      // },
       resetInput() {
         this.dice = {zombie: 0, wall: 0, car: 0};
         this.diceCounter = 0;
@@ -85,9 +86,17 @@
 
       },
       spawnZombie() {
+        if((this.progress.car.value >= 0) && (this.progress.car.value <= 3)) { this.numberOfZombies += 1 }
+        else if((this.progress.car.value >= 4) && (this.progress.car.value <= 6)) { this.numberOfZombies += 2 }
+        else if((this.progress.car.value >= 7) && (this.progress.car.value <= 8)) { this.numberOfZombies += 3 }
+        else { this.numberOfZombies += 4 };
+        this.progress.zombie.value += this.numberOfZombies;
+        console.log(this.numberOfZombies);
+      },
+      zombieAttack() {
 
       },
-    }
+    },
   }
 </script>
 
