@@ -48,11 +48,20 @@
         this.diceCounter--;
       },
       endTurn() {
-
+        this.diceRoll();
+        this.updateCounter();
+        this.resetInput();
+      },
+      diceRoll() {
+        
       },
       updateProgress(e) {
 
-      }
+      },
+      resetInput() {
+        this.dice = {zombie: 0, wall: 0, car: 0};
+        this.diceCounter = 0;
+      },
     }
   }
 </script>
