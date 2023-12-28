@@ -120,6 +120,9 @@
         this.progress.wall.value -= this.progress.zombie.value;
       },
     },
+    mounted() {
+      this.spawnZombie();
+    },
   }
 </script>
 
