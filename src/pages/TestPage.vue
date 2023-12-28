@@ -49,18 +49,26 @@
       },
       endTurn() {
         this.diceRoll();
-        this.updateCounter();
+        this.updateProgress();
         this.resetInput();
+        this.checkProgress();
+        this.spawnZombie();
       },
       diceRoll() {
         
       },
-      updateProgress(e) {
+      updateProgress() {
 
       },
       resetInput() {
         this.dice = {zombie: 0, wall: 0, car: 0};
         this.diceCounter = 0;
+      },
+      checkProgress() {
+
+      },
+      spawnZombie() {
+
       },
     }
   }
