@@ -14,16 +14,19 @@
         },
         progress: {
           zombie: {
-            increasing: true,
             value: 3,
+            increment: 1,
+            threshold: 3,
           },
           wall: {
-            increasing: false,
             value: 5,
+            increment: -1,
+            threshold: 3,
           },
           car: {
-            increasing: true,
             value: 2,
+            increment: 1,
+            threshold: 5,
           },
         }
       }
@@ -55,7 +58,14 @@
         this.spawnZombie();
       },
       diceRoll() {
-        
+        this.dice.foreach((el) => {
+          if(this.dice.el) {
+            const result = Math.floor(Math.random() * 6 + 1);
+            if(result >= this.progress.el.threshold) {
+              this.progress.el += this.progress.el.increment;
+            }
+          }
+        });
       },
       updateProgress() {
 
