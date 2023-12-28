@@ -59,10 +59,10 @@
       },
       diceRoll() {
         this.dice.foreach((el) => {
-          if(this.dice.el) {
+          if(this.dice[el]) {
             const result = Math.floor(Math.random() * 6 + 1);
-            if(result >= this.progress.el.threshold) {
-              this.progress.el += this.progress.el.increment;
+            if(result >= this.progress[el].threshold) {
+              this.progress[el] += this.progress[el].increment;
             }
           }
         });
