@@ -19,7 +19,7 @@
             threshold: 3,
           },
           wall: {
-            value: 0,
+            value: 10,
             increment: 1,
             threshold: 3,
           },
@@ -52,7 +52,6 @@
       },
       endTurn() {
         this.diceRoll();
-        //this.updateProgress();
         this.resetInput();
         //this.checkProgress();
         //this.spawnZombie();
@@ -64,10 +63,15 @@
               const result = Math.floor(Math.random() * 6 + 1);
               console.log(el, result);
               if(result >= this.progress[el].threshold) {
-                this.progress[el].value += this.progress[el].increment;
+                if((this.progress[el].value += this.progress[el].increment > 10) || (this.progress[el].value +=this.progress[el].increment < 0)) {
+                  console.log("do nothing");
+                } else {
+                  this.progress[el].value += this.progress[el].increment;
+                };
               }
             }
           }
+          console.log(this.progress.zombie.value, this.progress.wall.value, this.progress.car.value);
         }
       },
       updateProgress(n) {
