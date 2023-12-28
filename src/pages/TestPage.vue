@@ -63,11 +63,9 @@
               const result = Math.floor(Math.random() * 6 + 1);
               console.log(el, result);
               if(result >= this.progress[el].threshold) {
-                if((this.progress[el].value += this.progress[el].increment > 10) || (this.progress[el].value +=this.progress[el].increment < 0)) {
-                  console.log("do nothing");
-                } else {
+                if((this.progress[el].value += this.progress[el].increment <= 10) || (this.progress[el].value += this.progress[el].increment >= 0)) {
                   this.progress[el].value += this.progress[el].increment;
-                };
+                }
               }
             }
           }
@@ -134,6 +132,7 @@
     height: 60px;
     @include flex-center-center;
     font-size: 1.5rem;
+    cursor: pointer;
   }
 
   .main-test-page-container {

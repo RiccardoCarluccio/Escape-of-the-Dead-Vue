@@ -27,9 +27,10 @@
   To do:
 
   Importante:
-  -rendere "/escape-of-the-dead" la main page. Accedere alla "testpage" tramite "/escape-of-the-dead" o altro componente
+  -la ProgressBar Zombie non rispetta l'incremento negativo se il valore iniziale è 0
 
   Media importanza:
+  -sistemare le router-view
 
   Bassa importanza:
   -informarsi su :key
