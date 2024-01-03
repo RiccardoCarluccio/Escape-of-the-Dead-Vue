@@ -156,6 +156,12 @@
 
     <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
   </div>
+
+  <div class="routing">
+    <router-link to="/" class="restyled-router-link">HomePage</router-link>
+    <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
+    <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
+  </div>
 </template>
 
 <style lang="scss" scoped>

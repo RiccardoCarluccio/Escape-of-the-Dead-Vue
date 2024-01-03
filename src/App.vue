@@ -5,10 +5,11 @@
 </script>
 
 <template>
-  <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
-  <router-link to="/testpage" class="restyled-router-link">TestPage</router-link>
-  <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
-  <div class="restyled-router-link">questi due pulsanti li tolgo da quì tranquillo france. non ci saranno problemi di viewport</div>
+  <div class="routing" v-if="this.$route.path === '/'">
+    <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
+    <router-link to="/testpage" class="restyled-router-link">TestPage</router-link>
+    <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
+  </div>
 
   <router-view></router-view>
 </template>
@@ -17,8 +18,12 @@
   @use "../scss/partials/mixins" as *;
   @use "../scss/partials/variables" as *;
 
+  .routing {
+    display: flex;
+    gap: 2rem;
+  }
+
   .restyled-router-link {
-    display: inline-block;
     text-decoration: none;
   }
 </style>
@@ -30,7 +35,7 @@
   -
 
   Media importanza:
-  -sistemare le router-view
+  -
 
   Bassa importanza:
   -informarsi su :key
