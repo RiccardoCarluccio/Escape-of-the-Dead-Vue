@@ -66,9 +66,6 @@
             if(result >= this.progress[el].threshold) {
               if((this.progress[el].value + this.progress[el].increment <= 10) && (this.progress[el].value + this.progress[el].increment >= 0)) {
                 this.progress[el].value += this.progress[el].increment;
-                if(this.progress[el].increment === -1) {
-                  this.numberOfZombies--;
-                }
               }
             }
           }
@@ -117,7 +114,11 @@
         }
       },
       zombieAttack() {
-        this.progress.wall.value -= this.progress.zombie.value;
+        if((this.progress.wall.value - this.progress.zombie.value) >= 0) {
+          this.progress.wall.value -= this.progress.zombie.value;
+        } else {
+          this.progress.wall.value = 0;
+        }
       },
     },
     mounted() {
