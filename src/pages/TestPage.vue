@@ -42,11 +42,13 @@
       },
       addDice(el) {
         if(this.diceCounter >= 4) return;
+        if(this.dice[el] >= 4) return;
         this.dice[el]++;
         this.diceCounter++;
       },
       removeDice(el) {
-        if(this.diceCounter === 0) return;
+        if(this.diceCounter <= 0) return;
+        if(this.dice[el] <= 0) return;
         this.dice[el]--;
         this.diceCounter--;
       },
@@ -71,13 +73,6 @@
           }
         }
       },
-      // updateProgress(n) {
-      //   if(n >= this.progress[el].threshold) {
-      //     if((this.progress[el].value + this.progress[el].increment <= 10) && (this.progress[el].value + this.progress[el].increment >= 0)) {
-      //       this.progress[el].value += this.progress[el].increment;
-      //     }
-      //   }
-      // },
       resetInput() {
         this.dice = {zombie: 0, wall: 0, car: 0};
         this.diceCounter = 0;
@@ -152,16 +147,16 @@
         <DumbDiceBar counter-name="wall" :dice-counter="diceCounter" :dice-number="dice.wall" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
         <DumbDiceBar counter-name="car" :dice-counter="diceCounter" :dice-number="dice.car" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
       </div>
-    </div>
-    
-    <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
+    </div>    
   </div>
-
+  
   <div class="gappino">
     <router-link to="/" class="restyled-router-link">HomePage</router-link>
     <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
     <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
   </div>
+
+  <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
 </template>
 
 <style lang="scss" scoped>
