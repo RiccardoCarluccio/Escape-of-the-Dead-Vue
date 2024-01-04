@@ -153,11 +153,11 @@
         <DumbDiceBar counter-name="car" :dice-counter="diceCounter" :dice-number="dice.car" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
       </div>
     </div>
-
+    
     <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
   </div>
 
-  <div class="routing">
+  <div class="gappino">
     <router-link to="/" class="restyled-router-link">HomePage</router-link>
     <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
     <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
@@ -181,5 +181,11 @@
     padding: 2rem;
     display: flex;
     gap: 2rem;
+  }
+
+  .gappino {
+    display: flex;
+    gap: 1rem;
+    padding-left: 2rem;
   }
 </style>

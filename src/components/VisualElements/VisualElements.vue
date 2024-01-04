@@ -1,12 +1,12 @@
 <script>
   import EnemyZone from '../EnemyZone/EnemyZone.vue';
-  import WallsZone from '../WallsZone/WallsZone.vue';
+  import WallZone from '../WallZone/WallZone.vue';
   import CarZone from '../CarZone/CarZone.vue';
 
   export default {
     components: {
       EnemyZone,
-      WallsZone,
+      WallZone,
       CarZone,
     }
   }
@@ -15,7 +15,7 @@
 <template>
   <div class="visual-elements-container">
     <EnemyZone></EnemyZone>
-    <WallsZone></WallsZone>
+    <WallZone></WallZone>
     <CarZone></CarZone>
   </div>
 </template>

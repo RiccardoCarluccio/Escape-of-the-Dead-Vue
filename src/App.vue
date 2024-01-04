@@ -6,7 +6,7 @@
 
 <template>
   <div class="routing" v-if="this.$route.path === '/'">
-    <router-link to="/escape-of-the-dead" class="restyled-router-link">MainPage</router-link>
+    <router-link to="/escape-of-the-dead" class="restyled-router-link">Start Game</router-link>
     <router-link to="/testpage" class="restyled-router-link">TestPage</router-link>
     <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
   </div>

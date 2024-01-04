@@ -14,7 +14,7 @@
 
 <template>
   <div class="main-container">
-    <NavBar></NavBar>
+    <NavBar class="navbar-position"></NavBar>
     <VisualElements></VisualElements>
     <PlayZone></PlayZone>
   </div>
@@ -25,6 +25,16 @@
   @use "../../scss/partials/variables" as *;
 
   .main-container {
+    width: 960px;
+    height: 600px;
+    position: relative;
     display: flex;
+  }
+
+  .navbar-position {
+    position: absolute;
+    left: 0;
+    top: 0;
+    
   }
 </style>
