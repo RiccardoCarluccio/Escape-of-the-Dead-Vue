@@ -35,11 +35,6 @@
       <div class="sign-div plus-div"></div>
     </div>
   </div>
-
-  <div>
-    <div>Global Dice Counter: {{ diceCounter }}</div>
-    <div>Number of Dice: {{ diceNumber }}</div>
-  </div>
 </template>
 
 <style lang="scss" scoped>

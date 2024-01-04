@@ -11,7 +11,9 @@
     <router-link to="/testpageV2" class="restyled-router-link">TestPage V2</router-link>
   </div>
 
-  <router-view></router-view>
+  <div class="giga-container">
+    <router-view></router-view>
+  </div>
 </template>
 
 <style lang="scss">
@@ -25,6 +27,11 @@
 
   .restyled-router-link {
     text-decoration: none;
+  }
+
+  .giga-container {
+    display: flex;
+    justify-content: center;
   }
 </style>
 

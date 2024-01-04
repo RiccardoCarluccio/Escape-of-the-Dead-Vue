@@ -25,8 +25,8 @@
   @use "../../../scss/partials/variables" as *;
 
   .visual-elements-container {
-    width: 65dvw;
-    height: 100dvh;
+    width: 65%;
+    height: 100%;
     display: flex;
     flex-direction: column;
   }

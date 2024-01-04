@@ -27,7 +27,7 @@
 
   .nav-bar-container {
     width: 100%;
-    height: 10dvh;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
