@@ -26,10 +26,10 @@
   @use "../../../scss/partials/variables" as *;
 
   .progress-bar {
-    width: 320px;
-    height: 20px;
+    width: 250px;
+    height: 18px;
     background-color: $background-empty;
-    padding: 2px;
+    padding: 3px;
     display: flex;
     align-items: center;
   }

@@ -42,9 +42,8 @@
   @use "../../../scss/partials/variables" as *;
 
   .dice-bar {
-    width: 320px;
-    height: 60px;
-    padding: 0 7px;
+    width: 250px;
+    height: 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,7 +51,7 @@
   }
 
   .dice-manipulator {
-    height: 50px;
+    height: 35px;
     aspect-ratio: 1/1;
     position: relative;
     cursor: pointer;
@@ -67,11 +66,11 @@
 
     .minus-div {
       height: 8px;
-      width: 40px;
+      width: 28px;
     }
 
     .plus-div {
-      height: 40px;
+      height: 28px;
       width: 8px;
     }
   }
@@ -86,9 +85,8 @@
 
   .dice-zone {
     flex-grow: 1;
-    height: 60px;
+    height: 100%;
     background-color: $background-empty;
-    padding: 5px;
     display: flex;
     align-items: center;
     gap: 5px;
