@@ -87,6 +87,7 @@
     flex-grow: 1;
     height: 100%;
     background-color: $background-empty;
+    padding: 7px;
     display: flex;
     align-items: center;
     gap: 5px;

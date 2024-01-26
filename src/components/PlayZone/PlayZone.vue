@@ -164,7 +164,7 @@
   }
 
   .play-zone-bottom {
-    padding-bottom: 85px;
+    padding-bottom: 57px;
   }
 
   .bars-container {
