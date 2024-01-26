@@ -149,7 +149,7 @@
   .play-zone-container {
     width: 100%;
     height: 100%;
-    padding-right: 5rem;
+    padding-right: 120px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -157,10 +157,10 @@
   }
 
   .play-zone-top {
-    padding-top: 90px;
+    padding-top: 83px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 68px;
   }
 
   .play-zone-bottom {
@@ -170,19 +170,18 @@
   .bars-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
   }
 
   .end-turn-button {
     background-color: $button-next-phase;
-    width: 160px;
-    height: 60px;
+    width: 155px;
+    height: 53px;
     @include flex-center-center;
     font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
-    left: 45%;
-    bottom: 5%;
-    translate: -50% -50%;
+    left: 390px;
+    bottom: 70px;
   }
 </style>

@@ -39,7 +39,7 @@
   To do:
 
   Importante:
-  -
+  -Eliminare le 3 <...Zone> ma tenerne le proporzioni per lo sfondo
 
   Media importanza:
   -

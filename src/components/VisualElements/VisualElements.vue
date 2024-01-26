@@ -14,7 +14,9 @@
 
 <template>
   <div class="visual-elements-container">
-    
+    <EnemyZone></EnemyZone>
+    <WallZone></WallZone>
+    <CarZone></CarZone>
   </div>
 </template>
 
@@ -23,7 +25,7 @@
   @use "../../../scss/partials/variables" as *;
 
   .visual-elements-container {
-    width: 100%;
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: column;
