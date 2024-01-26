@@ -145,11 +145,13 @@
   @use "../../../scss/partials/variables" as *;
 
   .play-zone-container {
-    width: 35%;
+    width: 100%;
     height: 100%;
+    padding-right: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-end;
   }
 
   .play-zone-top {
