@@ -13,16 +13,25 @@
 </script>
 
 <template>
-  <div class="main-container">
-    <NavBar class="navbar-position"></NavBar>
-    <VisualElements></VisualElements>
-    <PlayZone class="interactive-layer"></PlayZone>
+  <div class="main-wrapper">
+    <div class="main-container">
+      <NavBar class="navbar-position"></NavBar>
+      <VisualElements></VisualElements>
+      <PlayZone class="interactive-layer"></PlayZone>
+    </div>
+
+    <div class="credit-instructions-container"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
   @use "../../scss/partials/mixins" as *;
   @use "../../scss/partials/variables" as *;
+
+
+  .main-wrapper {
+    padding-top: 25px;
+  }
 
   .main-container {
     width: 960px;

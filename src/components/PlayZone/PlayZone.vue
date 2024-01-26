@@ -137,6 +137,8 @@
         <DumbDiceBar counter-name="car" :dice-counter="diceCounter" :dice-number="dice.car" @add-dice-event="addDice" @remove-dice-event="removeDice"></DumbDiceBar>
       </div>
     </div>
+
+    <div class="end-turn-button" v-if="diceCounter === 4" @click="endTurn">Next Phase</div>
   </div>
 </template>
 
@@ -169,5 +171,18 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .end-turn-button {
+    background-color: $button-next-phase;
+    width: 160px;
+    height: 60px;
+    @include flex-center-center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    left: 45%;
+    bottom: 5%;
+    translate: -50% -50%;
   }
 </style>
