@@ -39,10 +39,11 @@
   To do:
 
   Importante:
-  -Eliminare le 3 <...Zone> ed eventualmente ri-settarne le proporzioni
-
+  -menu dropdown per le rules
+  -testo di indicazione fase del turno in basso a sinistra
+  
   Media importanza:
-  -
+  -Eliminare le 3 <...Zone> ed eventualmente ri-settarne le proporzioni
 
   Bassa importanza:
   -informarsi su :key
